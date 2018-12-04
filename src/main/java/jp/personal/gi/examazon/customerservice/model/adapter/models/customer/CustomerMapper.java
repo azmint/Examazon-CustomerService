@@ -6,10 +6,10 @@ import java.util.Arrays;
 import java.util.function.BiConsumer;
 
 public enum CustomerMapper {
-	id((customerRecord, customerBuilder) -> customerBuilder.withId(new CustomerId(customerRecord.id))),
+	id((customerRecord, customerBuilder) -> customerBuilder.withId(new CustomerId(customerRecord.customer_id))),
 	name((customerRecord, customerBuilder) -> customerBuilder.withName(new CustomerName(customerRecord.name))),
-	nameReading((customerRecord, customerBuilder) -> customerBuilder.withNameReading(new NameReading(customerRecord.nameReading))),
-	registrationState((customerRecord, customerBuilder) -> customerBuilder.withRegistrationState(RegistrationState.values()[customerRecord.registrationState])),;
+	nameReading((customerRecord, customerBuilder) -> customerBuilder.withNameReading(new NameReading(customerRecord.name_Reading))),
+	registrationState((customerRecord, customerBuilder) -> customerBuilder.withRegistrationState(RegistrationState.values()[customerRecord.registration_State])),;
 
 	final BiConsumer<CustomerRecord, CustomerBuilder> mapping;
 

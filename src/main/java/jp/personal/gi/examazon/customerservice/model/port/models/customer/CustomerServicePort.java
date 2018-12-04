@@ -14,9 +14,9 @@ public abstract class CustomerServicePort {
 		this.customerService().register(customer);
 	}
 
-	public CustomerDto findBy(String id) {
+	public Optional<CustomerDto> findBy(String id) {
 		CustomerId customerId = new CustomerId(id);
 		Optional<Customer> maybeCustomer = this.customerService().findBy(customerId);
-		return maybeCustomer.map(CustomerSampleMapper :: toDto).orElse(null);
+		return maybeCustomer.map(CustomerDtoMapper::apply);
 	}
 }

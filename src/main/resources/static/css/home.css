@@ -1,0 +1,13 @@
+.content {
+    background-color: rgb(255, 255, 255);
+    width: 600px;
+    margin: 10px auto;
+    border: 1px solid #d1d1d1;
+    padding: 30px;
+    text-align: center; /*文字を中央に表示*/
+}
+
+h1 {
+    font-size: 24px;
+    margin: 0px auto;
+}

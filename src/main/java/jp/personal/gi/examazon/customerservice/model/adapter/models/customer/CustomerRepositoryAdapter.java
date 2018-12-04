@@ -19,7 +19,12 @@ public class CustomerRepositoryAdapter implements CustomerRepository {
 
 	@Override
 	public void register(Customer entity) throws RepositoryAccessException {
-		throw new RepositoryAccessException();
+		CustomerRecord customerRecord = new CustomerRecord();
+		customerRecord.customer_id = entity.id().source();
+		customerRecord.name = entity.name().source();
+		customerRecord.name_Reading = entity.nameReading().source();
+		customerRecord.registration_State = entity.registrationState().source();
+		customerRecordMapper.insert(customerRecord);
 	}
 
 	@Override

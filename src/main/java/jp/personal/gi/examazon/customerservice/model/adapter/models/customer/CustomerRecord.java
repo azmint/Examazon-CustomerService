@@ -1,17 +1,17 @@
 package jp.personal.gi.examazon.customerservice.model.adapter.models.customer;
 
 public class CustomerRecord {
-	String id;
+	String customer_id;
 	String name;
-	String nameReading;
-	int registrationState;
+	String name_Reading;
+	int registration_State;
 
-	public String getId() {
-		return id;
+	public String getCustomer_id() {
+		return customer_id;
 	}
 
-	public void setId(String id) {
-		this.id = id;
+	public void setCustomer_id(String customer_id) {
+		this.customer_id = customer_id;
 	}
 
 	public String getName() {
@@ -22,19 +22,19 @@ public class CustomerRecord {
 		this.name = name;
 	}
 
-	public String getNameReading() {
-		return nameReading;
+	public String getName_Reading() {
+		return name_Reading;
 	}
 
-	public void setNameReading(String nameReading) {
-		this.nameReading = nameReading;
+	public void setName_Reading(String name_Reading) {
+		this.name_Reading = name_Reading;
 	}
 
-	public int getRegistrationState() {
-		return registrationState;
+	public int getRegistration_State() {
+		return registration_State;
 	}
 
-	public void setRegistrationState(int registrationState) {
-		this.registrationState = registrationState;
+	public void setRegistration_State(int registration_State) {
+		this.registration_State = registration_State;
 	}
 }

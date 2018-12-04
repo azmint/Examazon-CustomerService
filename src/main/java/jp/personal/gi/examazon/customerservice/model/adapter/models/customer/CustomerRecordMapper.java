@@ -9,15 +9,15 @@ import java.util.List;
 
 @Mapper
 public interface CustomerRecordMapper {
-	@Insert("INSERT INTO customer (id, name, nameReading, registrationState) VALUES (#{id}, #{name}, #{nameReading}, #{registrationState})")
+	@Insert("INSERT INTO CUSTOMER (customer_id, name, name_reading, registration_state) VALUES (#{customer_id}, #{name}, #{name_Reading}, #{registration_State})")
 	void insert(CustomerRecord customerRecord);
 
-	@Select("SELECT id, name, nameReading, registrationState FROM customer WHERE id = #{id}")
+	@Select("SELECT customer_id, name, name_reading, registration_state FROM CUSTOMER WHERE customer_id = #{customer_id}")
 	CustomerRecord selectWhereId(String id);
 
-	@Select("SELECT id, name, nameReading, registrationState FROM customer")
+	@Select("SELECT customer_id, name, name_reading, registration_state FROM CUSTOMER")
 	List<CustomerRecord> selectAll();
 
-	@Delete("DELETE FROM customer WHERE ID = #{id}")
+	@Delete("DELETE FROM CUSTOMER WHERE customer_id = #{customer_id}")
 	void delete(String id);
 }
