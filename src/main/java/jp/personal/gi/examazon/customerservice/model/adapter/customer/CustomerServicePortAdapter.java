@@ -11,7 +11,7 @@ public class CustomerServicePortAdapter extends CustomerServicePort {
 	CustomerService customerService;
 
 	@Override
-	public CustomerService customerService() {
+	protected CustomerService customerService() {
 		return customerService;
 	}
 }

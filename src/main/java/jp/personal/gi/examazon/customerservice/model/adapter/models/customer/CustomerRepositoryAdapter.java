@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Repository
 @MapperScan(basePackages = { "jp.personal.gi.examazon.customerservice.model.adapter.models.customer" })
@@ -29,7 +30,8 @@ public class CustomerRepositoryAdapter implements CustomerRepository {
 
 	@Override
 	public List<Customer> findAll() throws RepositoryAccessException {
-		throw new RepositoryAccessException();
+		List<CustomerRecord> customerRecords = this.customerRecordMapper.selectAll();
+		return customerRecords.stream().map(CustomerMapper::apply).collect(Collectors.toList());
 	}
 
 	@Override

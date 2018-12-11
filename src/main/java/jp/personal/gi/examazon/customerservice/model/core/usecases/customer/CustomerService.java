@@ -6,6 +6,7 @@ import jp.personal.gi.examazon.customerservice.model.core.models.customer.Custom
 import jp.personal.gi.examazon.customerservice.model.core.models.customer.CustomerRepository;
 import jp.personal.gi.examazon.customerservice.model.core.support.repository.RepositoryAccessException;
 
+import java.util.List;
 import java.util.Optional;
 
 public abstract class CustomerService {
@@ -25,5 +26,9 @@ public abstract class CustomerService {
 		} catch (RepositoryAccessException e) {
 			throw new NotFoundCustomerException(e);
 		}
+	}
+
+	public List<Customer> findAll() throws RepositoryAccessException {
+		return this.repository().findAll();
 	}
 }
